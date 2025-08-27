@@ -1,0 +1,28 @@
+[project]
+name = "rust-gpu-website"
+version = "0.1.0"
+description = "FastHTML website showcasing Rust GPU experiments with burn.dev and WASM"
+authors = [{name = "David"}]
+requires-python = ">=3.11"
+dependencies = [
+    "fasthtml>=0.6.9",
+    "uvicorn>=0.24.0",
+    "python-multipart>=0.0.6",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.1.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "RUF"]
+ignore = ["E501"]
